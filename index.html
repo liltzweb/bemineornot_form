@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Form pemesanan website custom bemineornot - liltz">
+  <title>bemineornot · order form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1">
+  <script src="site-config.js?v=1"></script>
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <header class="ticket">
+    <div class="ticket-inner">
+      <div class="stub-row">
+        <div>
+          <p class="eyebrow">not a one-time sale · ready-made website</p>
+          <h1 class="title"><span id="productName">bemineornot</span> <em>form</em> <span id="motif" aria-hidden="true">💌</span></h1>
+          <p class="context" id="contextText">interactive scrapbook confession &amp; love letter website · polaroid photo stack, timeline story gallery &amp; interactive question screen</p>
+        </div>
+        <div class="price-tag" aria-live="polite">
+          <span class="label">total</span>
+          <strong class="amount" id="priceOut">Rp15.000</strong>
+        </div>
+      </div>
+      <div class="perforation"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="exhibit tnc-card">
+      <div class="exhibit-head">
+        <span class="exhibit-num">t&amp;c</span>
+        <div>
+          <h2 class="exhibit-title">terms &amp; condition</h2>
+          <p class="exhibit-sub">harap dibaca sebelum mengisi form</p>
+        </div>
+      </div>
+      <div class="exhibit-body tnc-list">
+        <p><strong>(a.)</strong> please read all terms and conditions carefully before placing an order.</p>
+        <p><strong>(b.)</strong> ready-made websites allow buyers to change names, colors, texts, music, and photos. changing the color palette costs an additional idr 2,000. wording supplied by the seller may be used exactly as shown in the catalog at no additional fee. each ready-made design may be sold to more than one buyer and is not exclusive.</p>
+        <p><strong>(c.)</strong> custom websites start from idr 20,000, with the final price depending on complexity. simple revisions are allowed up to 3 times. revisions caused by seller mistakes are free; revisions exceeding 3 times or major revisions may require an additional fee.</p>
+        <p><strong>(d.)</strong> full payment must be made before processing. payment is accepted only through qris, with no additional payment fee.</p>
+        <p><strong>(e.)</strong> processing usually takes 1–7 days after payment, depending on the queue and buyer response. completion within 24 hours before the deadline requires an additional idr 4,000 rush fee.</p>
+        <p><strong>(f.)</strong> no refunds or cancellations are accepted after the website has been sent.</p>
+        <p><strong>(g.)</strong> all designs, codes, and contents belong to catamourie. copying, reselling, redistributing, or claiming them as your own is prohibited. by ordering through @liltz, buyers agree to all terms above.</p>
+      </div>
+    </section>
+
+    <form id="orderForm" novalidate>
+      <section class="exhibit">
+        <div class="exhibit-head">
+          <span class="exhibit-num">00</span>
+          <div><h2 class="exhibit-title">customer identity</h2><p class="exhibit-sub">data pemesan dan deadline</p></div>
+        </div>
+        <div class="exhibit-body">
+          <div class="row2">
+            <label class="field"><span>name <b class="req">*</b></span><input id="customerName" required autocomplete="name" placeholder="nama kamu"></label>
+            <label class="field"><span>username Telegram <b class="req">*</b></span><input id="customerTelegram" required placeholder="@username"></label>
+          </div>
+          <div class="row2">
+            <label class="field"><span>payment</span><input value="qris no rate" disabled></label>
+            <label class="field"><span>deadline <b class="req">*</b></span><input id="deadline" type="date" required></label>
+          </div>
+          <label class="checkbox-line"><input type="checkbox" id="rush"><span><strong>rush order</strong><small>selesai dalam 24 jam sebelum deadline · +Rp4.000</small></span></label>
+        </div>
+      </section>
+
+      <section class="exhibit">
+        <div class="exhibit-head">
+          <span class="exhibit-num">01</span>
+          <div><h2 class="exhibit-title">website customization</h2><p class="exhibit-sub">opsional dan langsung masuk total</p></div>
+        </div>
+        <div class="exhibit-body">
+          <div class="field">
+            <span>custom color palette</span>
+            <div class="radio-group">
+              <label class="radio-pill active" id="pillNo"><input type="radio" name="recolor" value="no" checked>no</label>
+              <label class="radio-pill" id="pillYes"><input type="radio" name="recolor" value="yes">yes · +Rp2.000</label>
+            </div>
+          </div>
+          <div class="field"><span>default palette</span><div class="swatches" id="defaultSwatches"></div></div>
+          <div class="palette-inputs" id="paletteInputs"></div>
+        </div>
+      </section>
+
+      <div id="dynamicSections"></div>
+
+      <section class="exhibit" id="mediaSection">
+        <div class="exhibit-head"><span class="exhibit-num" id="mediaNumber">10</span><div><h2 class="exhibit-title">photos &amp; background music</h2><p class="exhibit-sub">dikirim terpisah lewat Telegram</p></div></div>
+        <div class="exhibit-body">
+          <div class="note-block">
+            <strong id="mediaText">kebutuhan media: 8 foto (1 cover scrapbook portrait + 2 foto pengirim portrait + 5 foto pasangan: 3 portrait &amp; 2 landscape) + 1 file musik MP3</strong>
+            <span>Jangan upload di halaman ini. Setelah submit, kirim semua file sebagai dokumen (file) di chat Telegram dan beri nomor urutan pemakaian agar kualitas tetap HD.</span>
+          </div>
+          <label class="field">
+            <span>media order note</span>
+            <textarea id="mediaNote" rows="4" placeholder="contoh:&#10;• Cover: foto berdua di pantai&#10;• Sender 01: foto tersenyum&#10;• Sender 02: foto pakai hoodie&#10;• Pasangan 01: foto candid di kafe&#10;• Pasangan 02 (landscape): foto sunset pantai&#10;• Pasangan 03: foto studio&#10;• Pasangan 04 (landscape): foto jalan sore berdua&#10;• Pasangan 05: foto favorit terbaik&#10;• Lagu: Niki - Oceans &amp; Engines"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <section class="exhibit" id="linkSection">
+        <div class="exhibit-head"><span class="exhibit-num" id="linkNumber">11</span><div><h2 class="exhibit-title">website link</h2><p class="exhibit-sub">dua opsi link wajib diisi</p></div></div>
+        <div class="exhibit-body">
+          <label class="field"><span>website title <b class="req">*</b></span><input id="websiteTitle" required placeholder="judul yang tampil di tab browser (default: A letter for Isla Marceau)"></label>
+          <label class="field"><span>custom link option 01 <b class="req">*</b></span><span class="link-suffix"><input id="linkOne" required placeholder="namalink"><i>.netlify.app</i></span></label>
+          <label class="field"><span>custom link option 02 <b class="req">*</b></span><span class="link-suffix"><input id="linkTwo" required placeholder="namalinkalternatif"><i>.netlify.app</i></span></label>
+          <p class="default-hint">berikan dua opsi karena satu nama link hanya dapat digunakan oleh satu website.</p>
+        </div>
+      </section>
+
+      <div class="generate-block">
+        <button type="submit" class="btn accent" id="submitButton">submit form</button>
+        <p>tekan submit → form tersalin otomatis → buka chat <a href="https://t.me/reeumen" target="_blank" rel="noopener">t.me/reeumen</a> → paste dan lampirkan media.</p>
+        <p class="form-error" id="formError" role="alert" hidden></p>
+      </div>
+    </form>
+
+    <section class="output-card" id="outputCard" hidden>
+      <div class="output-head"><h2>form kamu</h2><span id="sendStatus">siap disalin</span></div>
+      <pre id="outputText" tabindex="0"></pre>
+      <div class="output-actions">
+        <button type="button" class="btn accent" id="copyButton">salin form</button>
+        <button type="button" class="btn secondary" id="selectManualButton">blok teks (salin manual)</button>
+        <a class="btn secondary" href="https://t.me/reeumen" target="_blank" rel="noopener">kirim ke telegram @reeumen</a>
+      </div>
+      <p id="resultMessage" role="status"></p>
+    </section>
+  </main>
+
+  <footer>𓏲 · thank you for ordering with liltz · 𓏲</footer>
+  <script src="app.js?v=1"></script>
+</body>
+</html>
