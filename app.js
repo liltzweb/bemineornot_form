@@ -277,8 +277,8 @@
         const linkNum = $("linkNumber")?.textContent || "11";
         lines.push(linkNum + " · website link");
         lines.push("website title → " + ($("websiteTitle")?.value?.trim() || ""));
-        lines.push("link option 01 → " + slugify($("linkOne")?.value || "") + ".netlify.app");
-        lines.push("link option 02 → " + slugify($("linkTwo")?.value || "") + ".netlify.app");
+        lines.push("link option 01 → " + slugify($("linkOne")?.value || "") + ".pages.dev");
+        lines.push("link option 02 → " + slugify($("linkTwo")?.value || "") + ".pages.dev");
         lines.push("");
         lines.push("foto/audio akan dikirim sebagai file di chat Telegram ini.");
         return lines.join("\n");
