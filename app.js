@@ -271,7 +271,6 @@
         const mediaNum = $("mediaNumber")?.textContent || "10";
         lines.push(mediaNum + " · photos & background music");
         lines.push("requirements → " + (cfg.media || "-"));
-        lines.push("media order note → " + ($("mediaNote")?.value?.trim() || "(tidak ada)"));
         lines.push("");
 
         const linkNum = $("linkNumber")?.textContent || "11";
