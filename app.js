@@ -82,7 +82,7 @@
       }
 
       function getTotal() {
-        return (cfg.price || 15000) + ($("recolorYes")?.checked ? 2000 : 0) + ($("rush")?.checked ? 4000 : 0);
+        return (cfg.price || 20000) + ($("recolorYes")?.checked ? 2000 : 0) + ($("rush")?.checked ? 4000 : 0);
       }
 
       function updatePrice() {

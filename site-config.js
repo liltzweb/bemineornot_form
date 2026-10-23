@@ -15,7 +15,7 @@ window.FORM_CONFIG = {
     "#EEE8F7",
     "#D6C9F3"
   ],
-  "price": 15000,
+  "price": 20000,
   "sections": [
     {
       "id": "02",
